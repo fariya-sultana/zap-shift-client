@@ -28,9 +28,9 @@ const benefits = [
 
 const BenefitsBox = () => {
     return (
-        <div className=" py-16">
+        <div className=" py-16 ">
             <div className="max-w-6xl mx-auto px-4">
-                <div className="border w-full border-dashed border-[#03464D] md:mb-12 mb-6"></div>
+                <div className="border w-full border-dashed border-[#03464D]  md:mb-12 mb-6"></div>
                 <div className="flex flex-col gap-6">
                     {benefits.map((benefit) => (
                         <BenefitCard

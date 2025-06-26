@@ -38,7 +38,7 @@ const servicesData = [
 
 const Sarvices = () => {
     return (
-        <section className="bg-[#03373D] py-16 md:my-14 my-8 rounded-2xl" id="services">
+        <section className="bg-[#03373D] py-16 md:my-14 my-8 rounded-3xl" id="services">
             <div className="max-w-6xl mx-auto px-4">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">Our Services</h2>
                 <p className="text-center max-w-2xl mx-auto mb-12 text-[#DADADA]">

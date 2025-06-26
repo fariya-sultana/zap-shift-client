@@ -2,7 +2,7 @@ import React from 'react';
 import img1 from '../../../assets/location-merchant.png';
 const BeMerchant = () => {
     return (
-        <div data-aos="zoom-in-up" className="bg-[url('assets/be-a-merchant-bg.png')] bg-no-repeat bg-[#03373D] p-4 md:p-20 max-w-6xl mx-auto rounded-4xl">
+        <div data-aos="zoom-in-up" className="bg-[url('assets/be-a-merchant-bg.png')] bg-no-repeat bg-[#03373D] p-4 md:p-20 max-w-6xl mx-auto rounded-3xl">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img
                     src={img1}

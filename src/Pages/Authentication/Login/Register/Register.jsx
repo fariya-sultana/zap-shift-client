@@ -22,13 +22,22 @@ const Register = () => {
 
     return (
 
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card bg-base-100 w-full max-w-sm shrink-0 ">
             <div className="card-body">
                 <h1 className="text-4xl font-bold">Create an Account</h1>
                 <p className='text-xl ml-1 font-medium'>Register with Profast</p>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <fieldset className="fieldset">
+
+                        <label className="label">Name</label>
+                        <input
+                            type="text"
+                            {...register('text', { required: true })}
+                            className="input" placeholder="Name" />
+                        {
+                            errors.text?.type === 'required' && <p className="text-red-500">Name is required</p>
+                        }
 
                         <label className="label">Email</label>
                         <input
