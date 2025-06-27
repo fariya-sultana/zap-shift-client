@@ -1,8 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../../Hooks/useAuth';
+
 import { Link } from 'react-router';
-import SocialLogin from '../../SocialLogin/SocialLogin';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import useAuth from '../../../Hooks/useAuth';
 
 const Register = () => {
 
