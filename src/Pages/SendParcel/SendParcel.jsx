@@ -87,7 +87,7 @@ export default function SendParcel() {
         `;
             }
         }
-
+        const totalCost = parseInt(`${cost.toFixed(2)}`)
         breakdownHTML += `<hr style="margin: 8px 0;"><h3 style="font-size:18px;color:#000;"><strong>Total Cost: ৳${cost.toFixed(2)}</strong></h3></div>`;
 
         const result = await Swal.fire({
@@ -108,6 +108,7 @@ export default function SendParcel() {
             const parcelData = {
                 ...data,
                 creation_date: new Date().toISOString(),
+                cost: totalCost,
                 created_by: user?.email,
                 status: "pending",
                 delivery_status: "not-collected",
