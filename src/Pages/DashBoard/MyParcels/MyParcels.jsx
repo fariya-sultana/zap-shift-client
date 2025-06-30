@@ -3,11 +3,13 @@ import React from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router';
 
 const MyParcels = () => {
 
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
 
     const { data: parcels = [], refetch } = useQuery({
         queryKey: ['my-parcels', user.email],
@@ -24,9 +26,9 @@ const MyParcels = () => {
         // Optionally open a modal here
     };
 
-    const handlePay = parcel => {
-        console.log("Trigger payment for", parcel);
-        // Implement your payment logic here
+    const handlePay = id => {
+        console.log("Trigger payment for",id);
+        navigate(`/dashboard/payment/${id}`)
     };
 
     const handleDelete = async (id) => {
@@ -118,7 +120,7 @@ const MyParcels = () => {
                                     {parcel.payment_status === "unpaid" && (
                                         <button
                                             className="btn btn-sm btn-outline btn-success"
-                                            onClick={() => handlePay(parcel)}
+                                            onClick={() => handlePay(parcel._id)}
                                         >
                                             Pay
                                         </button>

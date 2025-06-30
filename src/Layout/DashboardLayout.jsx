@@ -2,6 +2,13 @@ import React from 'react';
 import { Outlet } from 'react-router';
 import ProFastLogo from '../Pages/Shared/ProFastLogo/ProFastLogo';
 import { NavLink } from 'react-router';
+import {
+    FaHome,
+    FaBoxOpen,
+    FaMoneyCheckAlt,
+    FaMapMarkedAlt,
+    FaUserEdit
+} from "react-icons/fa";
 
 const DashboardLayout = () => {
     return (
@@ -37,11 +44,34 @@ const DashboardLayout = () => {
 
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4 space-y-1">
                     <ProFastLogo></ProFastLogo>
 
-                    <li className='mt-8'><a>Home</a></li>
-                    <li><NavLink to={'/dashboard/myParcels'}>My Parcels</NavLink></li>
+                    <li className='mt-8'>
+                        <NavLink to="/dashboard" className="flex items-center gap-4">
+                            <FaHome className="text-lg" /> Home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/dashboard/myParcels" className="flex items-center gap-4">
+                            <FaBoxOpen className="text-lg" /> My Parcels
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/dashboard/paymentHistory" className="flex items-center gap-4">
+                            <FaMoneyCheckAlt className="text-lg" /> Payment History
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/dashboard/track" className="flex items-center gap-4">
+                            <FaMapMarkedAlt className="text-lg" /> Track a Package
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/dashboard/profile" className="flex items-center gap-4">
+                            <FaUserEdit className="text-lg" /> Update Profile
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
 
