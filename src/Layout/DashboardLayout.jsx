@@ -10,10 +10,15 @@ import {
     FaUserEdit,
     FaUserCheck,
     FaUserClock,
-    FaUserShield
+    FaUserShield,
+    FaMotorcycle
 } from "react-icons/fa";
+import useUserRole from '../Hooks/useUserRole';
 
 const DashboardLayout = () => {
+
+    const { role, roleLoading } = useUserRole();
+
     return (
         <div className="drawer lg:drawer-open">
 
@@ -75,22 +80,31 @@ const DashboardLayout = () => {
                             <FaUserEdit className="text-lg" /> Update Profile
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/dashboard/active-riders" className="flex items-center gap-4">
-                            <FaUserCheck className="text-lg" /> Active Riders
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/dashboard/pending-riders" className="flex items-center gap-4">
-                            <FaUserClock className="text-lg" /> Pending Riders
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/dashboard/makeAdmin" className="flex items-center gap-4">
-                            <FaUserShield className="text-lg" /> Make Admin
-                        </NavLink>
-                    </li>
-                    
+                    {!roleLoading && role === 'admin' &&
+                        <>
+                            <li>
+                                <NavLink to="/dashboard/assign-riders" className="flex items-center gap-4">
+                                    <FaMotorcycle className="text-lg" /> Assign Riders
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/active-riders" className="flex items-center gap-4">
+                                    <FaUserCheck className="text-lg" /> Active Riders
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/pending-riders" className="flex items-center gap-4">
+                                    <FaUserClock className="text-lg" /> Pending Riders
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/makeAdmin" className="flex items-center gap-4">
+                                    <FaUserShield className="text-lg" /> Make Admin
+                                </NavLink>
+                            </li>
+                        </>
+                    }
+
                 </ul>
             </div>
 
