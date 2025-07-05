@@ -12,6 +12,10 @@ import MyParcels from "../Pages/DashBoard/MyParcels/MyParcels";
 import Payment from "../Pages/DashBoard/Payment/Payment";
 import PaymentHistory from "../Pages/DashBoard/PaymentHistory/PaymentHistory";
 import TrackParcel from "../Pages/DashBoard/TrackParcel/TrackParcel";
+import BeARider from "../Pages/BeARider/BeARider";
+import PendingRiders from "../Pages/DashBoard/PendingRiders/PendingRiders";
+import ActiveRiders from "../Pages/DashBoard/ActiveRiders/ActiveRiders";
+import MakeAdmin from "../Pages/DashBoard/MakeAdmin/MakeAdmin";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -24,6 +28,11 @@ export const router = createBrowserRouter([
             {
                 path: 'coverage',
                 Component: Coverage,
+                loader: () => fetch('./districtCenter.json')
+            },
+            {
+                path: 'beARider',
+                element: <PrivateRoutes><BeARider></BeARider></PrivateRoutes>,
                 loader: () => fetch('./districtCenter.json')
             },
             {
@@ -52,6 +61,18 @@ export const router = createBrowserRouter([
             {
                 path: 'track',
                 Component: TrackParcel
+            },
+            {
+                path: 'pending-riders',
+                Component: PendingRiders
+            },
+            {
+                path: 'active-riders',
+                Component: ActiveRiders
+            },
+            {
+                path: 'makeAdmin',
+                Component: MakeAdmin
             }
         ]
     },

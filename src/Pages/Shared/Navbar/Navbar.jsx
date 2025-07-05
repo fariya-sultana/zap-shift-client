@@ -11,6 +11,7 @@ const Navbar = () => {
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/sendParcel'}>Send Parcel</NavLink></li>
         <li><NavLink to={'/coverage'}>Coverage</NavLink></li>
+        <li><NavLink to={'/beARider'}>Be A Rider</NavLink></li>
         {
             user && <>
                 <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
@@ -20,7 +21,7 @@ const Navbar = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(res => console.log(res.user))
+            .then(() => console.log('logout successfully'))
             .catch(error => console.error(error.message))
     }
     return (
@@ -36,9 +37,9 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">
+                <span className="btn btn-ghost text-xl">
                     <ProFastLogo></ProFastLogo>
-                </a>
+                </span>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
